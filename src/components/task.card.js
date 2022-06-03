@@ -1,3 +1,4 @@
+import { Container, Grid, Button, Typography } from '@mui/material';
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 
@@ -17,20 +18,28 @@ const TaskCard = () => {
 
 	return (
 		<>
-			<h1>Tasks</h1>
-			<Link to='/'>Regresar a Home</Link>
-
-			{tasks.map((taskCard) => (
-				<div key={taskCard._id}>
-					<h3>{taskCard.title}</h3>
-					<p>
-						<b>Descripcion:</b> {taskCard.description}
-					</p>
-					<p>
-						<b>Status:</b> {taskCard.done === true ? 'Hecha' : 'Pendiente'}
-					</p>
-				</div>
-			))}
+			<Container fixed>
+				<Typography variant='h2'>Tasks</Typography>
+				<Link to='/'>Regresar a Home</Link>
+				<br />
+				<br />
+				<Grid container spacing={3}>
+					{tasks.map((task, index) => (
+						<Grid item xs={2} key={task._id}>
+							<Button
+								as={Link}
+								variant='contained'
+								to={`/task/${task._id}`}
+								sx={{
+									textDecoration: 'none',
+								}}
+							>
+								Tarea: {index + 1}
+							</Button>
+						</Grid>
+					))}
+				</Grid>
+			</Container>
 		</>
 	);
 };
