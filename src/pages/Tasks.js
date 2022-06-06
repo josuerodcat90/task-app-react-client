@@ -1,13 +1,13 @@
-import React from 'react'
+import React from 'react';
 
-import TaskCardContainer from '../components/task.cards.container'
+import TaskCardContainer from '../components/task.cards.container';
 
 const Tasks = () => {
-  return (
-    <>
-      <TaskCardContainer />
-    </>
-  )
-}
+	return (
+		<>
+			<TaskCardContainer />
+		</>
+	);
+};
 
-export default Tasks
+export default Tasks;

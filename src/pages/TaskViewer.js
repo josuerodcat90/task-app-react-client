@@ -4,9 +4,9 @@ import TaskView from '../components/task.view';
 
 const TaskViewer = () => {
 	return (
-		<div>
+		<>
 			<TaskView />
-		</div>
+		</>
 	);
 };
 
